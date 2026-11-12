@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thông tin giao hàng, đổi trả và câu hỏi thường gặp tại ARSENAL.">
+    <title>Hỗ trợ khách hàng | ARSENAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@600;700;800&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="site-config.js"></script>
+    <link rel="stylesheet" href="site.css?v=20261112-openai-consultation-1">
+    <script src="site-shell.js?v=20261112-openai-consultation-1" defer></script>
+</head>
+<body class="font-rajdhani relative">
+    <div class="fixed inset-0 scanlines z-[100] pointer-events-none"></div>
+    <site-header></site-header>
+    <main class="min-h-screen pt-36 pb-24 bg-tech-pattern">
+        <section class="site-container">
+            <div class="mb-12 border-b border-mecha-panel pb-6">
+                <span class="font-orbitron text-mecha-gold text-sm tracking-[0.3em] uppercase">Trung tâm hỗ trợ</span>
+                <h1 class="mt-3 text-4xl md:text-6xl font-orbitron font-black uppercase">Thông tin <span class="text-mecha-gold">khách hàng</span></h1>
+                <p class="mt-5 max-w-2xl text-mecha-gray text-lg">Các nội dung dưới đây giúp bạn sử dụng tính năng đặt hàng COD và tra cứu đơn. Một số biểu mẫu khác trên website vẫn đang ở chế độ demo.</p>
+            </div>
+
+            <div class="space-y-6">
+                <article id="tra-cuu" class="scroll-mt-36 bg-mecha-dark border border-mecha-panel p-7 md:p-9 cut-corner">
+                    <h2 class="font-orbitron font-bold text-2xl text-mecha-gold">Tra cứu đơn hàng</h2>
+                    <p class="mt-3 text-mecha-gray">Nhập mã đơn và số điện thoại người nhận đã dùng khi đặt hàng. Thông tin được tra cứu từ hệ thống đơn hàng.</p>
+                    <a href="tra-cuu-don.html" class="button button-primary mt-5">Mở trang tra cứu</a>
+                </article>
+
+                <article id="giao-hang" class="scroll-mt-36 bg-mecha-dark border border-mecha-panel p-7 md:p-9 cut-corner">
+                    <h2 class="font-orbitron font-bold text-2xl text-mecha-gold">Giao hàng</h2>
+                    <p class="mt-4 text-mecha-gray">Đơn COD chỉ được tạo sau khi bạn xác nhận tổng tiền hiển thị trên máy chủ, gồm phí vận chuyển theo cấu hình hiện tại. Tồn kho được cập nhật khi quản trị viên xác nhận đơn; thời gian giao dự kiến sẽ được cửa hàng bổ sung.</p>
+                </article>
+
+                <article id="doi-tra" class="scroll-mt-36 bg-mecha-dark border border-mecha-panel p-7 md:p-9 cut-corner">
+                    <h2 class="font-orbitron font-bold text-2xl text-mecha-gold">Đổi trả</h2>
+                    <p class="mt-4 text-mecha-gray">Chính sách đổi trả phụ thuộc vào nơi bán và tình trạng sản phẩm. Hãy hỏi rõ thời hạn, điều kiện chấp nhận đổi trả và cách xử lý sản phẩm lỗi trước khi thanh toán. Website này không tiếp nhận yêu cầu đổi trả.</p>
+                </article>
+
+                <article id="faq" class="scroll-mt-36 bg-mecha-dark border border-mecha-panel p-7 md:p-9 cut-corner">
+                    <h2 class="font-orbitron font-bold text-2xl text-mecha-gold">Câu hỏi thường gặp</h2>
+                    <div class="mt-6 space-y-6">
+                        <div>
+                            <h3 class="font-orbitron font-bold text-white">Các mức giá trên trang có phải giá bán cuối cùng không?</h3>
+                            <p class="mt-2 text-mecha-gray">Không. Giá được hiển thị để tham khảo và có thể thay đổi. Vui lòng xác nhận giá, tình trạng hàng và lịch phát hành với nơi bán.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-orbitron font-bold text-white">Tôi có thể đặt hàng trên website không?</h3>
+                            <p class="mt-2 text-mecha-gray">Có. Giỏ hàng sẽ kiểm tra lại giá và tồn khả dụng; bạn cần xác nhận tổng tiền COD trước khi đơn được lưu. Thanh toán thực hiện khi nhận hàng.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-orbitron font-bold text-white">Làm thế nào để chọn Grade phù hợp?</h3>
+                            <p class="mt-2 text-mecha-gray">Xem <a href="phan-hang.html" class="text-mecha-gold hover:text-white">hướng dẫn phân hạng</a> để so sánh kích thước và mức độ chi tiết của HG, RG, MG và PG.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <a href="lien-he.html" class="button button-primary mt-8">Mở trang liên hệ</a>
+        </section>
+    </main>
+    <site-footer></site-footer>
+</body>
+</html>

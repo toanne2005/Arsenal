@@ -1,0 +1,4 @@
+<?php
+declare(strict_types=1);
+$adminPage = 'preorders';
+require __DIR__ . '/layout.php';

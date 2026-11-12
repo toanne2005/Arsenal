@@ -1,0 +1,9 @@
+<Files "config.local.php">
+    Require all denied
+</Files>
+
+RewriteEngine On
+RewriteRule ^payments/momo/ipn/?$ payments/momo/ipn.php [L]
+RewriteRule ^payments/bank/sepay/?$ payments/bank/sepay.php [L]
+RewriteRule ^payments/cod/reconcile/?$ payments/cod/reconcile.php [L]
+RewriteRule ^payments/bank/reconcile/?$ payments/bank/reconcile.php [L]

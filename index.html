@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth fullpage-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARSENAL | Mô hình Mecha cao cấp</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@600;700;800&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="site-config.js"></script>
+    <link rel="stylesheet" href="site.css?v=20261112-openai-consultation-1">
+    <script src="site-shell.js?v=20261112-openai-consultation-1" defer></script>
+</head>
+<body class="font-rajdhani relative">
+
+    <!-- Global Scanline Overlay -->
+    <div class="fixed inset-0 scanlines z-[100] pointer-events-none"></div>
+
+    <site-header></site-header>
+
+    <header id="home" data-scroll-section class="fullpage-section relative w-full h-screen bg-tech-pattern flex items-center pt-20 overflow-hidden">
+        <!-- Giant Background Japanese Text -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none opacity-5">
+            <h1 data-scroll-parallax class="hero-kanji text-[15vw] font-black leading-none whitespace-nowrap">メカ</h1>
+        </div>
+        
+        <!-- Diagonal Accent Lines Background -->
+        <div class="absolute top-0 right-0 w-1/2 h-full border-l border-mecha-panel transform skew-x-12 translate-x-32 bg-mecha-dark/50 z-0"></div>
+
+        <div data-scroll-reveal class="site-container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Text Content -->
+            <div class="hero-copy flex flex-col justify-center">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="h-px w-12 bg-mecha-gold"></div>
+                    <span class="hero-kicker font-orbitron text-mecha-gold text-xs tracking-[0.4em] uppercase">Phase 01 // Khởi động</span>
+                </div>
+                
+                <h1 class="hero-title mb-6 text-white">
+                    <span class="hero-title-line">Mecha</span>
+                    <span class="hero-title-line hero-title-outline">Tuyển chọn</span>
+                    <span class="hero-title-line">Đỉnh cao</span>
+                </h1>
+                
+                <div class="border-l-2 border-mecha-gold pl-6 mb-10">
+                    <p class="text-mecha-gray text-lg md:text-xl font-medium max-w-md uppercase tracking-widest leading-relaxed">
+                        Tự tay kiến tạo cỗ máy trong mơ. Mô hình Mecha tinh xảo dành cho mọi cấp độ lắp ráp. Tỉ lệ từ 1/144 đến 1/60.
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap gap-6 items-center">
+                    <a href="#featured" class="hero-discover-cta cut-corner bg-mecha-gold hover:bg-mecha-goldGlow text-mecha-black font-orbitron font-bold py-4 px-10 uppercase tracking-[0.2em] text-sm flex items-center transition-all duration-300 transform hover:scale-105">
+                        <span>Khám phá ngay</span><i class="fa-solid fa-angle-right ml-3 text-lg"></i>
+                    </a>
+                    
+                    <div class="font-orbitron text-xs text-mecha-gray tracking-[0.2em] uppercase flex flex-col">
+                        <span>Tình trạng: <span class="text-mecha-gold">Vừa bổ sung</span></span>
+                        <span>Số lượng: 1.024 sản phẩm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Mecha Image -->
+            <div class="relative h-[420px] lg:h-[600px] w-full flex justify-center items-center hud-target p-4 hero-mecha-stage">
+                <!-- Decorative Tech Elements around image -->
+                <div class="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-mecha-gold/30"></div>
+                <div class="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-mecha-gold/30"></div>
+                <div class="absolute top-1/4 right-0 text-[10px] font-orbitron text-mecha-gray rotate-90 origin-right tracking-widest">
+                    MODEL // MECHA // 3D
+                </div>
+                
+                <!-- Interactive 3D mobile suit -->
+                <div id="mecha-viewer" role="img" aria-label="Mô hình mecha 3D có thể xoay" class="mecha-viewer h-full w-full cut-corner-reverse border-4 border-mecha-panel shadow-[0_0_50px_rgba(255,255,255,0.05)] z-10 relative">
+                    <div class="mecha-viewer-loading">ĐANG KHỞI TẠO MÔ HÌNH 3D...</div>
+                </div>
+                <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap font-orbitron text-[9px] text-mecha-gray tracking-[0.2em] uppercase pointer-events-none">
+                    KÉO ĐỂ XOAY // 3D MODEL
+                </div>
+                     
+                <!-- Behind image glow -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-mecha-gold/20 blur-[100px] rounded-full z-0"></div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="absolute bottom-0 w-full h-12 border-t border-mecha-panel bg-mecha-dark/80 flex items-center justify-between px-6 font-orbitron text-[10px] text-mecha-gray tracking-widest uppercase z-10">
+            <div class="flex space-x-8">
+                <span><i class="fa-solid fa-check text-mecha-gold mr-2"></i> Perfect Grade</span>
+                <span><i class="fa-solid fa-check text-mecha-gold mr-2"></i> Master Grade</span>
+                <span><i class="fa-solid fa-check text-mecha-gold mr-2"></i> Real Grade</span>
+            </div>
+            <div class="animate-pulse">CUỘN ĐỂ KHÁM PHÁ</div>
+        </div>
+    </header>
+
+    <main>
+        <section id="discover" data-scroll-section class="fullpage-section mecha-banners-section" aria-label="Khám phá mô hình Mecha">
+            <div class="section-mecha-mark discover-mecha-mark" data-scroll-parallax aria-hidden="true">
+                <i class="fa-solid fa-crosshairs"></i>
+            </div>
+            <div data-scroll-reveal class="site-container relative z-10">
+                <div class="mecha-banner-carousel" data-banner-carousel aria-label="Banner khám phá Mecha">
+                    <a href="phan-hang.html" class="mecha-banner mecha-banner-pair mecha-banner-pair--caption is-active" data-banner-slide aria-label="Khám phá mô hình Falcon và chọn cấp độ lắp ráp" aria-hidden="false">
+                        <img class="mecha-pair-shadow" src="images/index/bongbanner1.png" alt="">
+                        <img class="mecha-pair-main" src="images/index/banner1.png" alt="Mô hình Mecha Falcon">
+                        <div class="mecha-banner-copy">
+                            <span>ARSENAL UNIT // 01</span>
+                            <strong>FALCON<br>XUẤT KÍCH</strong>
+                            <p>Bắt đầu hành trình lắp ráp với những mẫu Mecha nổi bật.</p>
+                            <span class="mecha-banner-cta">Chọn cấp độ <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a href="dong-mecha.html" class="mecha-banner mecha-banner-pair mecha-banner-pair--caption" data-banner-slide aria-label="Khám phá các dòng Mecha Gundam" aria-hidden="true" tabindex="-1">
+                        <img class="mecha-pair-shadow" src="images/index/bongbanner2.png" alt="">
+                        <img class="mecha-pair-main" src="images/index/banner2.png" alt="Mô hình Mecha Gundam">
+                        <div class="mecha-banner-copy">
+                            <span>ARSENAL UNIT // 02</span>
+                            <strong>THẾ GIỚI<br>MECHA</strong>
+                            <p>Khám phá các dòng máy và tìm cỗ máy dành cho bạn.</p>
+                            <span class="mecha-banner-cta">Khám phá Mecha <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a href="dong-mecha.html" class="mecha-banner mecha-banner-pair mecha-banner-pair--caption" data-banner-slide aria-label="Khám phá cỗ máy Mecha thế hệ mới" aria-hidden="true" tabindex="-1">
+                        <img class="mecha-pair-shadow" src="images/index/bongbanner3.webp" alt="">
+                        <img class="mecha-pair-main" src="images/index/banner3.webp" alt="Mô hình Mecha với giáp xanh và vũ khí hạng nặng">
+                        <div class="mecha-banner-copy">
+                            <span>ARSENAL UNIT // 03</span>
+                            <strong>BỨT PHÁ<br>GIỚI HẠN</strong>
+                            <p>Khám phá cỗ máy Mecha thế hệ mới với thiết kế chiến đấu đầy uy lực.</p>
+                            <span class="mecha-banner-cta">Khám phá Mecha <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <button type="button" class="mecha-banner-arrow mecha-banner-previous" data-banner-previous aria-label="Banner trước">
+                        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="mecha-banner-arrow mecha-banner-next" data-banner-next aria-label="Banner tiếp theo">
+                        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                    <div class="mecha-banner-pagination" aria-label="Chọn banner">
+                        <button type="button" data-banner-indicator="0" aria-label="Banner 1" aria-current="true"></button>
+                        <button type="button" data-banner-indicator="1" aria-label="Banner 2"></button>
+                        <button type="button" data-banner-indicator="2" aria-label="Banner 3"></button>
+                    </div>
+                </div>
+                <div class="mecha-signal-rail" aria-hidden="true">
+                    <span class="mecha-signal-label"><i class="fa-solid fa-circle-nodes"></i> ARSENAL</span>
+                    <span class="mecha-signal-track"><span class="mecha-signal-sweep"></span></span>
+                    <span class="mecha-signal-hint">CUỘN ĐỂ KHÁM PHÁ <i class="fa-solid fa-angles-down"></i></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="arsenal" data-scroll-section class="fullpage-section py-24 bg-mecha-black relative border-b border-mecha-panel" aria-label="Trạm điều khiển Mecha">
+            <div class="section-mecha-mark" data-scroll-parallax aria-hidden="true">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div data-scroll-reveal class="site-container relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-mecha-panel pb-6">
+                    <div>
+                        <span class="font-orbitron text-mecha-gold text-sm tracking-[0.3em] uppercase block mb-2">Arsenal // Mission Control</span>
+                        <h2 class="text-4xl md:text-5xl font-orbitron font-bold uppercase text-white">Bắt đầu hành trình Mecha</h2>
+                    </div>
+                    <div class="font-orbitron text-xs text-mecha-gray tracking-[0.2em] uppercase mt-4 md:mt-0 text-right">
+                        Chọn điểm đến<br>cho nhiệm vụ của bạn
+                    </div>
+                </div>
+
+                <div class="arsenal-destination-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a data-scroll-reveal href="dong-mecha.html" class="arsenal-destination-card group relative bg-mecha-dark border border-mecha-panel cut-corner transition-all duration-300 hover:border-mecha-gold hover:bg-mecha-panel gold-glow">
+                        <span class="absolute top-4 right-5 font-orbitron text-[10px] text-mecha-gray group-hover:text-mecha-gold transition-colors">01 // ARCHIVE</span>
+                        <i class="arsenal-card-icon fa-solid fa-robot block text-3xl text-mecha-gold transition-transform duration-300 group-hover:translate-x-1"></i>
+                        <h3 class="arsenal-card-title font-orbitron font-bold uppercase text-white group-hover:text-mecha-gold transition-colors">Dòng Mecha</h3>
+                        <p class="arsenal-card-description text-mecha-gray group-hover:text-mecha-white transition-colors">Khám phá các cỗ máy và những vũ trụ đứng sau chúng.</p>
+                        <div class="arsenal-card-action flex items-center font-orbitron font-bold text-mecha-gold uppercase">
+                            Mở kho lưu trữ <i class="fa-solid fa-arrow-right ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                        </div>
+                    </a>
+
+                    <a data-scroll-reveal href="dung-cu.html" class="arsenal-destination-card group relative bg-mecha-dark border border-mecha-panel cut-corner transition-all duration-300 hover:border-mecha-gold hover:bg-mecha-panel gold-glow">
+                        <span class="absolute top-4 right-5 font-orbitron text-[10px] text-mecha-gray group-hover:text-mecha-gold transition-colors">02 // WORKSHOP</span>
+                        <i class="arsenal-card-icon fa-solid fa-screwdriver-wrench block text-3xl text-mecha-gold transition-transform duration-300 group-hover:translate-x-1"></i>
+                        <h3 class="arsenal-card-title font-orbitron font-bold uppercase text-white group-hover:text-mecha-gold transition-colors">Xưởng lắp ráp</h3>
+                        <p class="arsenal-card-description text-mecha-gray group-hover:text-mecha-white transition-colors">Chuẩn bị dụng cụ và phụ kiện cho lần lắp ráp tiếp theo.</p>
+                        <div class="arsenal-card-action flex items-center font-orbitron font-bold text-mecha-gold uppercase">
+                            Vào xưởng <i class="fa-solid fa-arrow-right ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                        </div>
+                    </a>
+
+                    <a data-scroll-reveal href="dat-truoc.html" class="arsenal-destination-card group relative bg-mecha-dark border border-mecha-panel cut-corner transition-all duration-300 hover:border-mecha-gold hover:bg-mecha-panel gold-glow">
+                        <span class="absolute top-4 right-5 font-orbitron text-[10px] text-mecha-gray group-hover:text-mecha-gold transition-colors">03 // NEXT LAUNCH</span>
+                        <i class="arsenal-card-icon fa-solid fa-rocket block text-3xl text-mecha-gold transition-transform duration-300 group-hover:-translate-y-1"></i>
+                        <h3 class="arsenal-card-title font-orbitron font-bold uppercase text-white group-hover:text-mecha-gold transition-colors">Sắp xuất kích</h3>
+                        <p class="arsenal-card-description text-mecha-gray group-hover:text-mecha-white transition-colors">Xem trước các mẫu Mecha đang chờ ngày ra mắt.</p>
+                        <div class="arsenal-card-action flex items-center font-orbitron font-bold text-mecha-gold uppercase">
+                            Xem đặt trước <i class="fa-solid fa-arrow-right ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                        </div>
+                    </a>
+
+                    <a data-scroll-reveal href="ho-tro.html" class="arsenal-destination-card group relative bg-mecha-dark border border-mecha-panel cut-corner transition-all duration-300 hover:border-mecha-gold hover:bg-mecha-panel gold-glow">
+                        <span class="absolute top-4 right-5 font-orbitron text-[10px] text-mecha-gray group-hover:text-mecha-gold transition-colors">04 // SUPPORT</span>
+                        <i class="arsenal-card-icon fa-solid fa-satellite-dish block origin-center text-3xl text-mecha-gold transition-transform duration-300 group-hover:rotate-[3deg]"></i>
+                        <h3 class="arsenal-card-title font-orbitron font-bold uppercase text-white group-hover:text-mecha-gold transition-colors">Trạm hỗ trợ</h3>
+                        <p class="arsenal-card-description text-mecha-gray group-hover:text-mecha-white transition-colors">Tìm hướng dẫn và trợ giúp cho hành trình của bạn.</p>
+                        <div class="arsenal-card-action flex items-center font-orbitron font-bold text-mecha-gold uppercase">
+                            Liên hệ hỗ trợ <i class="fa-solid fa-arrow-right ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" data-scroll-section class="home-featured-section fullpage-section py-24 bg-tech-pattern relative">
+            <div class="section-mecha-mark featured-mecha-mark" data-scroll-parallax aria-hidden="true">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+            <div data-scroll-reveal class="site-container relative z-10">
+                <!-- Section Header -->
+                <div class="flex justify-between items-center mb-12">
+                    <div class="featured-title-block flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-mecha-white text-mecha-black flex items-center justify-center cut-corner-sm">
+                            <i class="fa-solid fa-crosshairs text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="featured-title-kicker">ARSENAL // TUYỂN CHỌN</span>
+                            <h2 class="text-3xl md:text-4xl font-orbitron font-bold uppercase text-white">Mô hình nổi bật</h2>
+                        </div>
+                    </div>
+                    <a href="san-pham.html" class="hidden md:inline-block border border-mecha-panel hover:border-mecha-gold text-mecha-white hover:text-mecha-gold px-6 py-2 font-orbitron text-xs uppercase tracking-widest transition-all cut-corner-sm">
+                        Xem tất cả mô hình
+                    </a>
+                </div>
+
+                <!-- Product Grid -->
+                <div id="product-container" class="home-featured-products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" aria-live="polite">
+                    <p class="search-empty col-span-full" role="status">Đang tải sản phẩm…</p>
+                </div>
+                
+                <div class="mt-12 text-center md:hidden">
+                    <a href="san-pham.html" class="inline-block border border-mecha-panel bg-mecha-dark text-mecha-white px-8 py-3 font-orbitron text-sm uppercase tracking-widest cut-corner">
+                        Xem tất cả mô hình
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <nav class="fullpage-nav" aria-label="Điều hướng các phần trang chủ">
+        <button type="button" data-scroll-to="home" aria-label="Đầu trang" aria-current="true"></button>
+        <button type="button" data-scroll-to="discover" aria-label="Khám phá"></button>
+        <button type="button" data-scroll-to="arsenal" aria-label="Trạm Mecha"></button>
+        <button type="button" data-scroll-to="featured" aria-label="Mô hình nổi bật"></button>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = [...document.querySelectorAll('[data-scroll-section]')];
+            const navButtons = [...document.querySelectorAll('[data-scroll-to]')];
+            let revealElements = [...document.querySelectorAll('[data-scroll-reveal]')];
+            const bannerCarousel = document.querySelector('[data-banner-carousel]');
+            const bannerSlides = [...(bannerCarousel?.querySelectorAll('[data-banner-slide]') || [])];
+            const bannerIndicators = [...(bannerCarousel?.querySelectorAll('[data-banner-indicator]') || [])];
+            let activeBanner = 0;
+
+            const showBanner = index => {
+                if (!bannerSlides.length) return;
+                activeBanner = (index + bannerSlides.length) % bannerSlides.length;
+                bannerSlides.forEach((slide, slideIndex) => {
+                    const isActive = slideIndex === activeBanner;
+                    slide.classList.toggle('is-active', isActive);
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                    slide.tabIndex = isActive ? 0 : -1;
+                });
+                bannerIndicators.forEach((indicator, indicatorIndex) => {
+                    if (indicatorIndex === activeBanner) indicator.setAttribute('aria-current', 'true');
+                    else indicator.removeAttribute('aria-current');
+                });
+            };
+
+            bannerCarousel?.querySelector('[data-banner-previous]')?.addEventListener('click', () => showBanner(activeBanner - 1));
+            bannerCarousel?.querySelector('[data-banner-next]')?.addEventListener('click', () => showBanner(activeBanner + 1));
+            bannerIndicators.forEach(indicator => {
+                indicator.addEventListener('click', () => showBanner(Number(indicator.dataset.bannerIndicator)));
+            });
+
+            document.body.classList.add('has-scroll-reveal');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    document.getElementById(button.dataset.scrollTo)?.scrollIntoView({
+                        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+                    });
+                });
+            });
+
+            let scrollFrame = 0;
+            const updateScrollEffects = () => {
+                scrollFrame = 0;
+                const viewportCenter = window.innerHeight / 2;
+                const revealThreshold = window.innerHeight * 0.12;
+
+                revealElements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    const visibleHeight = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
+                    const isInView = element.classList.contains('is-inview');
+                    const threshold = Math.min(rect.height, revealThreshold * (isInView ? 0.35 : 1));
+                    element.classList.toggle('is-inview', visibleHeight >= threshold);
+                });
+
+                let activeSection = sections[0];
+                let nearestDistance = Infinity;
+
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const distance = Math.abs(rect.top + rect.height / 2 - viewportCenter);
+                    if (distance < nearestDistance) {
+                        nearestDistance = distance;
+                        activeSection = section;
+                    }
+                });
+
+                navButtons.forEach(button => {
+                    const isActive = button.dataset.scrollTo === activeSection.id;
+                    if (isActive) button.setAttribute('aria-current', 'true');
+                    else button.removeAttribute('aria-current');
+                });
+
+                const footer = document.querySelector('site-footer');
+                const footerVisible = footer
+                    && window.innerHeight - footer.getBoundingClientRect().top > window.innerHeight * 0.75;
+                document.querySelector('.fullpage-nav')?.classList.toggle('is-footer-visible', Boolean(footerVisible));
+
+                document.querySelectorAll('[data-scroll-parallax]').forEach(element => {
+                    const section = element.closest('[data-scroll-section]');
+                    if (!section) return;
+                    const rect = section.getBoundingClientRect();
+                    const offset = Math.max(-26, Math.min(26, (rect.top + rect.height / 2 - viewportCenter) * -0.04));
+                    element.style.setProperty('--parallax-y', `${offset}px`);
+                });
+            };
+
+            document.addEventListener('arsenal:catalog-rendered', () => {
+                revealElements = [...document.querySelectorAll('[data-scroll-reveal]')];
+                updateScrollEffects();
+            });
+
+            window.addEventListener('scroll', () => {
+                if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateScrollEffects);
+            }, { passive: true });
+
+            const pageFooter = document.querySelector('site-footer');
+            let footerPeekClosing = false;
+            let footerPeekCloseTimer = 0;
+            const openFooterPeek = () => {
+                const root = document.documentElement;
+                if (root.classList.contains('footer-peeking')) return;
+
+                root.classList.add('footer-peeking');
+                pageFooter.getBoundingClientRect();
+                window.requestAnimationFrame(() => {
+                    root.classList.add('footer-peek-ready');
+                    pageFooter.getBoundingClientRect();
+                    window.requestAnimationFrame(() => {
+                        footerPeekClosing = false;
+                        root.classList.add('footer-peek-visible');
+                        updateScrollEffects();
+                    });
+                });
+            };
+
+            const closeFooterPeek = () => {
+                const root = document.documentElement;
+                if (!root.classList.contains('footer-peeking') || footerPeekClosing) return;
+
+                footerPeekClosing = true;
+                root.classList.remove('footer-peek-visible');
+
+                const finishClosing = event => {
+                    if (event && (event.target !== pageFooter || event.propertyName !== 'transform')) return;
+                    pageFooter.removeEventListener('transitionend', finishClosing);
+                    window.clearTimeout(footerPeekCloseTimer);
+                    root.classList.remove('footer-peeking', 'footer-peek-ready');
+                    footerPeekClosing = false;
+                    updateScrollEffects();
+                };
+
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    finishClosing();
+                    return;
+                }
+
+                pageFooter.addEventListener('transitionend', finishClosing);
+                footerPeekCloseTimer = window.setTimeout(finishClosing, 900);
+            };
+
+            window.addEventListener('wheel', event => {
+                if (!pageFooter || window.matchMedia('(max-width: 767px)').matches || Math.abs(event.deltaY) < 5) return;
+
+                const root = document.documentElement;
+                const isPeeking = root.classList.contains('footer-peeking');
+                if (isPeeking) {
+                    event.preventDefault();
+                    if (event.deltaY < 0 && !footerPeekClosing) {
+                        closeFooterPeek();
+                    }
+                    return;
+                }
+
+                const featured = document.getElementById('featured');
+                if (event.deltaY <= 0 || !featured) return;
+
+                const featuredTop = featured.getBoundingClientRect().top;
+                if (featuredTop <= 3) {
+                    event.preventDefault();
+                    if (featuredTop < -3) window.scrollBy(0, featuredTop);
+                    openFooterPeek();
+                    return;
+                }
+
+                if (featuredTop <= event.deltaY) {
+                    event.preventDefault();
+                    window.scrollBy(0, featuredTop);
+                }
+            }, { passive: false });
+
+            window.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && document.documentElement.classList.contains('footer-peeking')) {
+                    closeFooterPeek();
+                }
+            });
+
+            updateScrollEffects();
+        });
+    </script>
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="mecha-viewer.js" defer></script>
+</body>
+</html>

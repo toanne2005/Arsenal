@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đăng ký, đăng nhập và quản lý tài khoản khách hàng ARSENAL.">
+    <title>Tài khoản | ARSENAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@600;700;800&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="site-config.js"></script>
+    <link rel="stylesheet" href="site.css?v=20261112-openai-consultation-1">
+    <script src="site-shell.js?v=20261112-openai-consultation-1" defer></script>
+    <script src="tai-khoan.js" defer></script>
+</head>
+<body class="font-rajdhani relative">
+    <div class="fixed inset-0 scanlines z-[100] pointer-events-none"></div>
+    <site-header></site-header>
+    <main class="min-h-screen pt-36 pb-24 bg-tech-pattern">
+        <section class="site-container max-w-5xl">
+            <header class="mb-10 border-b border-mecha-panel pb-6">
+                <span class="font-orbitron text-mecha-gold text-sm tracking-[0.3em] uppercase">Tài khoản ARSENAL</span>
+                <h1 class="mt-3 text-4xl md:text-6xl font-orbitron font-black uppercase">Hồ sơ <span class="text-mecha-gold">khách hàng</span></h1>
+                <p class="mt-5 max-w-2xl text-mecha-gray text-lg">Đăng nhập để quản lý thông tin, giỏ hàng, yêu thích và lịch sử đơn.</p>
+            </header>
+            <p id="account-message" class="mb-6 text-mecha-gold" role="status" aria-live="polite"></p>
+            <div id="account-guest" class="grid md:grid-cols-2 gap-6">
+                <form id="account-login" class="bg-mecha-dark border border-mecha-panel p-7 cut-corner space-y-4">
+                    <h2 class="font-orbitron text-xl uppercase">Đăng nhập</h2>
+                    <label class="form-field">Email<input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+                    <label class="form-field">Mật khẩu<input type="password" name="password" autocomplete="current-password" maxlength="72" required></label>
+                    <button class="button button-primary w-full" type="submit">Đăng nhập</button>
+                </form>
+                <form id="account-register" class="bg-mecha-dark border border-mecha-panel p-7 cut-corner space-y-4">
+                    <h2 class="font-orbitron text-xl uppercase">Tạo tài khoản</h2>
+                    <label class="form-field">Họ tên<input name="name" autocomplete="name" maxlength="120" required></label>
+                    <label class="form-field">Điện thoại<input type="tel" name="phone" autocomplete="tel" maxlength="20" required></label>
+                    <label class="form-field">Email<input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+                    <label class="form-field">Địa chỉ (không bắt buộc)<input name="address" autocomplete="street-address" maxlength="255"></label>
+                    <label class="form-field">Mật khẩu (ít nhất 10 ký tự)<input type="password" name="password" autocomplete="new-password" minlength="10" maxlength="72" required></label>
+                    <button class="button button-primary w-full" type="submit">Đăng ký</button>
+                </form>
+            </div>
+            <div id="account-profile" hidden>
+                <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+                    <h2 id="account-welcome" class="font-orbitron text-2xl"></h2>
+                    <button id="account-logout" class="button button-secondary" type="button">Đăng xuất</button>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <form id="account-profile-form" class="bg-mecha-dark border border-mecha-panel p-7 cut-corner space-y-4">
+                        <h3 class="font-orbitron text-lg uppercase">Thông tin cá nhân</h3>
+                        <label class="form-field">Họ tên<input name="name" maxlength="120" required></label>
+                        <label class="form-field">Điện thoại<input name="phone" type="tel" maxlength="20" required></label>
+                        <label class="form-field">Email<input name="email" type="email" maxlength="254" required></label>
+                        <label class="form-field">Địa chỉ<input name="address" maxlength="255"></label>
+                        <button class="button button-primary" type="submit">Lưu hồ sơ</button>
+                    </form>
+                    <form id="account-password-form" class="bg-mecha-dark border border-mecha-panel p-7 cut-corner space-y-4">
+                        <h3 class="font-orbitron text-lg uppercase">Đổi mật khẩu</h3>
+                        <label class="form-field">Mật khẩu hiện tại<input name="currentPassword" type="password" autocomplete="current-password" required></label>
+                        <label class="form-field">Mật khẩu mới<input name="newPassword" type="password" autocomplete="new-password" minlength="10" maxlength="72" required></label>
+                        <button class="button button-secondary" type="submit">Đổi mật khẩu</button>
+                    </form>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-6 mt-6">
+                    <section class="bg-mecha-dark border border-mecha-panel p-7 cut-corner">
+                        <div class="flex justify-between items-center gap-4">
+                            <h3 class="font-orbitron text-lg uppercase">Sản phẩm yêu thích</h3>
+                            <button id="account-save-favorites" class="button button-secondary" type="button">Lưu yêu thích hiện tại</button>
+                        </div>
+                        <div id="account-favorites" class="mt-4 space-y-2"></div>
+                    </section>
+                    <section class="bg-mecha-dark border border-mecha-panel p-7 cut-corner">
+                        <h3 class="font-orbitron text-lg uppercase">Giỏ hàng</h3>
+                        <div id="account-cart" class="mt-4 space-y-2"></div>
+                    </section>
+                </div>
+                <section class="bg-mecha-dark border border-mecha-panel p-7 cut-corner mt-6">
+                    <h3 class="font-orbitron text-lg uppercase">Lịch sử đơn hàng</h3>
+                    <div id="account-orders" class="mt-4 space-y-3"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <site-footer></site-footer>
+</body>
+</html>
